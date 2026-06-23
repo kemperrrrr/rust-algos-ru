@@ -1,4 +1,4 @@
-# 棒的切割
+# Разрезание стержня
 
 ```rust
 //! Solves the rod-cutting problem

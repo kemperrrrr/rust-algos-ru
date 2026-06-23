@@ -1,4 +1,4 @@
-# 判断子序列
+# Проверка подпоследовательности
 
 ```rust
 /// Fibonacci via Dynamic Programming

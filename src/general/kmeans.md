@@ -1,4 +1,4 @@
-# K-Means算法
+# К-средних
 
 ```rust
 // Macro to implement kmeans for both f64 and f32 without writing everything

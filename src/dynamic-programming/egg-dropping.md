@@ -1,4 +1,4 @@
-# 扔鸡蛋(Egg dropping)
+# Задача о яйцах
 
 ```rust
 /// # Egg Dropping Puzzle

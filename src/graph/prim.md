@@ -1,4 +1,4 @@
-# Prim算法(最小生成树)
+# Алгоритм Прима (MST)
 
 ```rust
 use std::cmp::Reverse;

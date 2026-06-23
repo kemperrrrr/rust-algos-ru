@@ -1,4 +1,4 @@
-# 基数排序
+# Поразрядная сортировка
 
 ```rust
 /// Sorts the elements of `arr` in-place using radix sort.

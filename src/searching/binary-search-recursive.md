@@ -1,4 +1,4 @@
-# 递归二分查找
+# Рекурсивный бинарный поиск
 
 ```rust
 use std::cmp::Ordering;
@@ -62,7 +62,7 @@ mod tests {
     #[test]
     fn fail_search_strings() {
         let say_hello_list = vec!["hi", "olá", "salut"];
-        for target in &["adiós", "你好"] {
+        for target in &["adiós", "привет"] {
             assert_eq!(
                 binary_search_rec(&say_hello_list, target, &LEFT, &say_hello_list.len()),
                 None

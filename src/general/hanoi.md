@@ -1,4 +1,4 @@
-# 汉诺塔算法
+# Ханойская башня
 
 ```rust
 pub fn hanoi(n: i32, from: i32, to: i32, via: i32, moves: &mut Vec<(i32, i32)>) {

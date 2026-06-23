@@ -1,4 +1,4 @@
-# 摩斯码
+# Азбука Морзе
 
 ```rust
 use std::collections::HashMap;

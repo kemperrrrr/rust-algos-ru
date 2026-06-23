@@ -1,4 +1,4 @@
-# 质数筛法
+# Решето простых чисел
 
 ```rust
 pub fn prime_numbers(max: usize) -> Vec<usize> {

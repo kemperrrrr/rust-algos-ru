@@ -1,4 +1,4 @@
-# 最小编辑距离(Edit distance)
+# Расстояние Левенштейна
 
 ```rust
 /// Coin change via Dynamic Programming

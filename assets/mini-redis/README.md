@@ -1,6 +1,6 @@
 # mini-redis
 
-本项目从[tokio/mini-redis](https://github.com/tokio-rs/mini-redis)fork而来，作为rust course的练习项目之一，**文档和注释还未进行翻译**，欢迎大家贡献。
+Этот проект — форк [tokio/mini-redis](https://github.com/tokio-rs/mini-redis), используемый как один из упражнений в курсе по Rust. **Документация и комментарии пока не переведены**.
 
 
 `mini-redis` is an incomplete, idiomatic implementation of a

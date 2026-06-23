@@ -1,4 +1,4 @@
-# 逆序倒转
+# Разворот строки
 
 ```rust
 pub fn reverse(text: &str) -> String {

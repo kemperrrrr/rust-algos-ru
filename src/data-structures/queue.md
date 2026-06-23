@@ -1,4 +1,4 @@
-# 队列
+# Очередь
 
 ```rust
 #[derive(Debug)]

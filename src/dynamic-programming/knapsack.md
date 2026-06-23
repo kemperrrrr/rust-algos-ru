@@ -1,4 +1,4 @@
-# 背包问题
+# Задача о рюкзаке
 
 ```rust
 //! Solves the knapsack problem

@@ -1,4 +1,4 @@
-# 快速排序
+# Быстрая сортировка
 
 ```rust
 pub fn quick_sort<T: PartialOrd>(arr: &mut [T]) {
@@ -8,12 +8,12 @@ pub fn quick_sort<T: PartialOrd>(arr: &mut [T]) {
 }
 
 fn quick_sort_range<T: PartialOrd>(arr: &mut [T], lo: usize, hi: usize) {
-    // 只有当元素个数大于一时才进行排序
+    // Сортируем только если больше одного элемента
     if lo < hi {
         let pos = partition(arr, lo, hi);
         // let pos = partition_random(arr, lo, hi);
         if pos != 0 {
-            // 如果 pos == 0, pos - 1 会发生溢出错误
+            // Если pos == 0, вычитание 1 вызовет переполнение
             quick_sort_range(arr, lo, pos - 1);
         }
         quick_sort_range(arr, pos + 1, hi);
@@ -21,22 +21,22 @@ fn quick_sort_range<T: PartialOrd>(arr: &mut [T], lo: usize, hi: usize) {
 }
 
 fn partition<T: PartialOrd>(arr: &mut [T], lo: usize, hi: usize) -> usize {
-    // 默认选取 lo 作为 pivot
+    // По умолчанию выбираем lo как опорный элемент (pivot)
     let pivot = lo;
 
     let (mut left, mut right) = (lo, hi);
     while left < right {
-        // 找到右边第一个不大于等于 arr[pivot] 的元素
+        // Ищем справа первый элемент, меньший опорного
         while left < right && arr[right] >= arr[pivot] {
             right -= 1;
         }
 
-        // 找到左边第一个不小于等于 arr[pivot] 的元素
+        // Ищем слева первый элемент, больший опорного
         while left < right && arr[left] <= arr[pivot] {
             left += 1;
         }
         
-        // 交换前面找到的两个元素
+        // Меняем найденные элементы
         if left != right {
             arr.swap(left, right);
         }
@@ -44,35 +44,32 @@ fn partition<T: PartialOrd>(arr: &mut [T], lo: usize, hi: usize) -> usize {
 
     arr.swap(pivot, left);
 
-    // 返回正确的分割位置
+    // Возвращаем правильную позицию разделения
     left
 }
 
-// 随机选取 pivot 的位置
+// Выбор среднего элемента как опорного
 fn partition_random<T: PartialOrd>(arr: &mut [T], lo: usize, hi: usize) -> usize {
-    // 在 Cargo.toml 的依赖中添加 rand 库
-    use rand::Rng;
-    let mut rng = rand::thread_rng();
-    let pivot = rng.gen_range(lo..=hi);
+    let pivot = lo + (hi - lo) / 2;
 
-    // 交换 lo 和 pivot 位置上的元素，从而间接使得 pivot = lo
-    // 因此后序操作和 partition() 函数一致
+    // Меняем lo и pivot местами, чтобы pivot оказался на позиции lo
+    // Дальнейшие операции совпадают с partition()
     arr.swap(lo, pivot);
 
     let pivot = lo;
     let (mut left, mut right) = (lo, hi);
     while left < right {
-        // 找到右边第一个不大于等于 arr[pivot] 的元素
+        // Ищем справа первый элемент, меньший опорного
         while left < right && arr[right] >= arr[pivot] {
             right -= 1;
         }
 
-        // 找到左边第一个不小于等于 arr[pivot] 的元素
+        // Ищем слева первый элемент, больший опорного
         while left < right && arr[left] <= arr[pivot] {
             left += 1;
         }
         
-        // 交换前面找到的两个元素
+        // Меняем найденные элементы
         if left != right {
             arr.swap(left, right);
         }
@@ -80,7 +77,7 @@ fn partition_random<T: PartialOrd>(arr: &mut [T], lo: usize, hi: usize) -> usize
 
     arr.swap(pivot, left);
 
-    // 返回正确的分割位置
+    // Возвращаем правильную позицию разделения
     left
 }
 

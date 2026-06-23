@@ -1,4 +1,4 @@
-# 梳排序
+# Сортировка расчёской
 
 ```rust
 pub fn comb_sort<T: Ord>(arr: &mut [T]) {

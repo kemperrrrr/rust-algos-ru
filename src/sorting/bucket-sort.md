@@ -1,4 +1,4 @@
-# 桶排序
+# Сортировка корзинами
 
 ```rust
 /// Sort a slice using bucket sort algorithm.
@@ -21,7 +21,7 @@ pub fn bucket_sort(arr: &[usize]) -> Vec<usize> {
     }
 
     for bucket in buckets.iter_mut() {
-        super::insertion_sort(bucket);
+        bucket.sort();
     }
 
     let mut result = vec![];
@@ -36,8 +36,11 @@ pub fn bucket_sort(arr: &[usize]) -> Vec<usize> {
 
 #[cfg(test)]
 mod tests {
-    use super::super::is_sorted;
     use super::*;
+
+    fn is_sorted(arr: &[usize]) -> bool {
+        arr.windows(2).all(|w| w[0] <= w[1])
+    }
 
     #[test]
     fn empty() {

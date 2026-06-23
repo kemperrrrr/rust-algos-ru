@@ -1,4 +1,4 @@
-# 扩展欧几里得算法
+# Расширенный алгоритм Евклида
 
 ```rust
 fn update_step(a: &mut i32, old_a: &mut i32, quotient: i32) {

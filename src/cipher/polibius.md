@@ -1,4 +1,4 @@
-# Polibius密码
+# Квадрат Полибия
 
 ```rust
 /// Encode an ASCII string into its location in a Polybius square.

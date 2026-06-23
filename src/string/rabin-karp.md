@@ -1,4 +1,4 @@
-# Rabin Karp算法
+# Алгоритм Рабина — Карпа
 
 ```rust
 pub fn rabin_karp(target: String, pattern: String) -> Vec<usize> {

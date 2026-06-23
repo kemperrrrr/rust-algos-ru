@@ -1,4 +1,4 @@
-# 线性搜索
+# Линейный поиск
 
 ![alt text][linear-image]
 

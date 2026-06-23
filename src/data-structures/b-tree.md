@@ -1,4 +1,4 @@
-# B树
+# B-дерево
 
 B-Trees are version of 2-3 trees, which are self-balancing. They are used to improve Disk reads and have a complexity of
 O(log(n)), for every tree operations.The number of Childrens/Keys a particular node has, is

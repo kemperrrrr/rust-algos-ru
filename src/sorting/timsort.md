@@ -1,6 +1,6 @@
 # Timsort
 
-> 算法由 [xieyu567](https://github.com/xieyu567) 提交
+> Алгоритм предоставлен [xieyu567](https://github.com/xieyu567)
 
 ```rust,editable
 use std::cmp::min;

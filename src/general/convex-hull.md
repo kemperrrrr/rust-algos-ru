@@ -1,4 +1,4 @@
-# 凸包算法
+# Выпуклая оболочка
 
 ```rust
 use std::cmp::Ordering::Equal;

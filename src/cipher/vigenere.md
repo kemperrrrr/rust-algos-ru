@@ -1,4 +1,4 @@
-# vigenere加密
+# Шифр Виженера
 
 ```rust
 //! Vigenère Cipher

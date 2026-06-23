@@ -1,4 +1,4 @@
-# 帕斯卡三角
+# Треугольник Паскаля
 
 ```rust
 /// ## Paslcal's triangle problem

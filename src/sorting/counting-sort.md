@@ -1,4 +1,4 @@
-# 计数排序
+# Сортировка подсчётом
 
 ```rust
 /// In place counting sort for collections of u32

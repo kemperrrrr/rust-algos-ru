@@ -1,15 +1,6 @@
-# 深度优先Tic Tac Toe
+# Поиск в глубину — Крестики-нолики
 
 ```rust
-#[allow(unused_imports)]
-use std::io;
-
-//Interactive Tic-Tac-Toe play needs the "rand = "0.8.3" crate.
-//#[cfg(not(test))]
-//extern crate rand;
-//#[cfg(not(test))]
-//use rand::Rng;
-
 #[derive(Copy, Clone, PartialEq, Debug)]
 struct Position {
     x: u8,
@@ -33,84 +24,6 @@ struct SinglePlayAction {
 pub struct PlayActions {
     positions: Vec<Position>,
     side: Players,
-}
-
-#[allow(dead_code)]
-#[cfg(not(test))]
-fn main() {
-    let mut board = vec![vec![Players::Blank; 3]; 3];
-
-    while !available_positions(&board).is_empty()
-        && !win_check(Players::PlayerX, &board)
-        && !win_check(Players::PlayerO, &board)
-    {
-        display_board(&board);
-        println!("Type in coordinate for X mark to be played. ie. a1 etc.");
-        let mut input = String::new();
-        io::stdin()
-            .read_line(&mut input)
-            .expect("Failed to read line");
-
-        let mut move_position: Option<Position> = None;
-        input.make_ascii_lowercase();
-        let bytes = input.trim().trim_start().as_bytes();
-        if bytes.len() as u32 == 2
-            && (bytes[0] as char).is_alphabetic()
-            && (bytes[1] as char).is_numeric()
-        {
-            let column: u8 = bytes[0] - b'a';
-            let row: u8 = bytes[1] - b'1';
-
-            if column <= 2 && row <= 2 {
-                move_position = Some(Position { x: column, y: row });
-            }
-        }
-
-        //Take the validated user input coordinate and use it.
-        if let Some(move_pos) = move_position {
-            let open_positions = available_positions(&board);
-
-            let mut search = open_positions.iter();
-            let result = search.find(|&&x| x == move_pos);
-            if result.is_none() {
-                println!("Not a valid empty coordinate.");
-                continue;
-            } else {
-                board[move_pos.y as usize][move_pos.x as usize] = Players::PlayerX;
-
-                if win_check(Players::PlayerX, &board) {
-                    display_board(&board);
-                    println!("Player X Wins!");
-                    return;
-                }
-            }
-
-            //Find the best game plays from the current board state
-            let recusion_result = minimax(Players::PlayerO, &board);
-            match recusion_result {
-                Some(x) => {
-                    //Interactive Tic-Tac-Toe play needs the "rand = "0.8.3" crate.
-                    //#[cfg(not(test))]
-                    //let random_selection = rand::thread_rng().gen_range(0..x.positions.len());
-                    let random_selection = 0;
-
-                    let response_pos = x.positions[random_selection];
-                    board[response_pos.y as usize][response_pos.x as usize] = Players::PlayerO;
-                    if win_check(Players::PlayerO, &board) {
-                        display_board(&board);
-                        println!("Player O Wins!");
-                        return;
-                    }
-                }
-
-                None => {
-                    display_board(&board);
-                    println!("Draw game.");
-                    return;
-                }
-            }
-        }
-    }
 }
 
 #[allow(dead_code)]
@@ -389,4 +302,6 @@ mod test {
         );
     }
 }
+
+fn main() {}
 ```

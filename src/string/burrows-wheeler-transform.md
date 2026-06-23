@@ -1,4 +1,4 @@
-# 数据转换算法(Burrows Wheeler Transform)
+# Преобразование Барроуза — Уиллера
 
 ```rust
 pub fn burrows_wheeler_transform(input: String) -> (String, usize) {

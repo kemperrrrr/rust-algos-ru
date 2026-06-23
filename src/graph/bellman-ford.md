@@ -1,4 +1,4 @@
-# 最短路径-Bellman Ford
+# Кратчайший путь — Беллман — Форд
 
 ```rust
 use std::collections::BTreeMap;

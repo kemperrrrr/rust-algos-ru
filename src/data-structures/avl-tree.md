@@ -1,4 +1,4 @@
-# avl树
+# АВЛ-дерево
 
 An AVL Tree is a self-balancing binary search tree. The heights of any two sibling
 nodes must differ by at most one; the tree may rebalance itself after insertion or

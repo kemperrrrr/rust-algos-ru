@@ -1,4 +1,4 @@
-# trie树
+# Префиксное дерево (trie)
 
 ```rust
 use std::collections::HashMap;

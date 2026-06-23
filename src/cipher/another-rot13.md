@@ -1,4 +1,4 @@
-# rot13第二种实现
+# ROT13 — вторая реализация
 
 ```rust
 pub fn another_rot13(text: &str) -> String {

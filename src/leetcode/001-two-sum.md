@@ -1,19 +1,19 @@
-# 1. 两数之和
-题目链接: [两数之和](https://leetcode-cn.com/problems/two-sum/)
+# 1. Сумма двух
+Ссылка на задачу: [Two Sum](https://leetcode.com/problems/two-sum/)
 
-相信每个刷过LeetCode的人永远也忘不了这道题（就像当年背单词书永远也忘不了书中的第一个单词abandon哈哈哈），但是这道题用Rust来写也并不是那么简单，尤其是对于Rust新手，相信看完这道题你对Rust中的一些小细节会有更深的理解。
+Каждый, кто решал LeetCode, навсегда запоминает эту задачу (как когда-то первое слово в учебнике английского — «abandon», ха-ха). Но написать её на Rust не так просто, особенно для новичков. Уверен, после разбора этой задачи вы глубже поймёте некоторые детали Rust.
 
+## Решение 1
+Простое и грубое: двойной цикл, перебор всех пар до нахождения подходящей.
 
-## 解法一
-简单粗暴，双重循环，遍历所有的二元组直到找到符合题目要求的结果。
-
-```rust
+```rust,no_run
+# struct Solution;
 impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         for i in 0..nums.len() {
             for j in (i + 1)..nums.len() {
                 if nums[i] + nums[j] == target {
-                    // 注意Rust中下标索引类型为usize，因此这里我们需要将i, j转换为i32
+                    // В Rust тип индекса — usize, поэтому приводим i, j к i32
                     return vec![i as i32, j as i32];
                 }
             }
@@ -23,10 +23,10 @@ impl Solution {
 }
 ```
 
-## 解法二
-我们观察解法一中第二个for循环：
+## Решение 2
+Посмотрим на второй цикл for из первого решения:
 
-```rust
+```rust,ignore
 for j in (i + 1)..nums.len() {
     if nums[i] + nums[j] == target {
         ...
@@ -34,9 +34,9 @@ for j in (i + 1)..nums.len() {
 }
 ```
 
-我们换种方式思考：
+Попробуем иначе:
 
-```rust
+```rust,ignore
 for j in (i + 1)..nums.len() {
     let other = target - nums[i];
     if nums[j] == other {
@@ -45,9 +45,10 @@ for j in (i + 1)..nums.len() {
 }
 ```
 
-因此我们的目标就变成了在一个数组中寻找值，这可是HashSet/HashMap的强项啊！由于这里我们还需要获取到对应值在数组中的下标索引位置，因此这里只能用HashMap了。
+Таким образом, наша цель — найти значение в массиве. Это отличная задача для HashSet/HashMap! Поскольку нам ещё нужно получить индекс соответствующего значения, используем HashMap.
 
-```rust
+```rust,no_run
+# struct Solution;
 use std::collections::HashMap;
 
 impl Solution {
@@ -65,8 +66,8 @@ impl Solution {
 }
 ```
 
-如果你是个Rust新手的话，相信你可能会存在以下几点疑惑：
+Если вы новичок в Rust, у вас могут возникнуть следующие вопросы:
 
-- 为什么需要`use std::collections::HashMap;`这一行：可能是觉得HashMap用的没有那么多吧，因此Rust并没有将HashMap列入Prelude行列当中，因此当我们需要使用HashMap时，需要手动引入。
-- 前面的`for i in 0..nums.len()`哪去了，这个`for (index, value) in nums.iter().enumerate()`是个什么鬼：在Rust中推荐使用迭代器，而enumerate这个迭代器适配器返回含有(下标，值)的元组。
-- 为什么`if let Some(&other_index) = map.get(&other)`需要用到两个引用符号：简单来说，因为所有权的问题。[HashMap的get方法](https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get)中传入的参数是对key的引用，返回的是Option<&value>，因此我们需要用这两个引用符号。
+- Зачем нужна строка `use std::collections::HashMap;`? HashMap используется не так часто, поэтому Rust не включил её в Prelude. При необходимости её нужно подключать вручную.
+- Куда делся `for i in 0..nums.len()` и что такое `for (index, value) in nums.iter().enumerate()`? В Rust рекомендуется использовать итераторы. Адаптер `enumerate` возвращает кортежи (индекс, значение).
+- Почему в `if let Some(&other_index) = map.get(&other)` нужны два знака ссылки? Из-за системы владения. [Метод get](https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get) принимает ссылку на ключ и возвращает `Option<&value>`, поэтому требуются две ссылки.

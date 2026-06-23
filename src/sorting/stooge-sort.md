@@ -1,4 +1,4 @@
-# 臭皮匠排序
+# Сортировка по частям
 
 ```rust
 fn _stooge_sort<T: Ord>(arr: &mut [T], start: usize, end: usize) {

@@ -1,4 +1,4 @@
-# 最长上升子序列
+# Наибольшая возрастающая подпоследовательность
 
 ```rust
 /// Finds the longest increasing subsequence and returns it.

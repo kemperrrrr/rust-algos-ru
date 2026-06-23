@@ -1,4 +1,4 @@
-# 链表
+# Связный список
 
 A linked list is also a `linear` data structure, and each element in the linked list is actually a separate object while all the objects are `linked together by the reference filed` in each element. In a `doubly linked list`, each node contains, besides the `next` node link, a second link field pointing to the `previous` node in the sequence. The two links may be called `next` and `prev`. And many modern operating systems use doubly linked lists to maintain references to active processes, threads and other dynamic objects.
 

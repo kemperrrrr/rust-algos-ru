@@ -1,4 +1,4 @@
-# 两数之和
+# Сумма двух
 
 ```rust
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-# 冒泡排序
+# Сортировка пузырьком
 
 ```rust
 pub fn bubble_sort<T: PartialOrd>(arr: &mut [T]) {
@@ -8,10 +8,10 @@ pub fn bubble_sort<T: PartialOrd>(arr: &mut [T]) {
 
     let size = arr.len();
     for i in 0..(size - 1) {
-        // 标记当前循环是否发生元素交换
+        // Флаг: были ли обмены на этой итерации
         let mut swapped = false;
 
-        // 最后i个元素已经排好了顺序
+        // Последние i элементов уже отсортированы
         for j in 1..(size - i) {
             if arr[j - 1] > arr[j] { 
                 arr.swap(j - 1, j);
@@ -19,7 +19,7 @@ pub fn bubble_sort<T: PartialOrd>(arr: &mut [T]) {
             }
         }
 
-        // 如果当前循环没有发生元素交换，说明数组已经有序
+        // Если обменов не было, массив уже отсортирован
         if !swapped {
             break;
         }

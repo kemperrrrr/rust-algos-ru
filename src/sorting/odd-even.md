@@ -1,4 +1,4 @@
-# 奇偶排序
+# Чётно-нечётная сортировка
 
 ```rust
 pub fn odd_even_sort<T: Ord>(arr: &mut [T]) {

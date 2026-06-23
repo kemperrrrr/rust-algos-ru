@@ -1,4 +1,4 @@
-# 斐波那契(fibonacci)
+# Числа Фибоначчи
 
 ```rust
 /// Fibonacci via Dynamic Programming

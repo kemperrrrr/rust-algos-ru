@@ -1,4 +1,4 @@
-# 质数检测
+# Проверка простоты
 
 ```rust
 pub fn prime_check(num: usize) -> bool {

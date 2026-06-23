@@ -1,4 +1,4 @@
-# 广度优先搜索
+# Поиск в ширину
 
 ```rust
 use std::collections::HashSet;

@@ -1,8 +1,20 @@
-# 查找第K小的元素
+# Поиск K-го наименьшего элемента
 
 ```rust
-use crate::sorting::partition;
 use std::cmp::{Ordering, PartialOrd};
+
+fn partition<T: PartialOrd>(arr: &mut [T], lo: isize, hi: isize) -> isize {
+    let pivot = hi;
+    let mut i = lo - 1;
+    for j in lo..hi {
+        if arr[j as usize] <= arr[pivot as usize] {
+            i += 1;
+            arr.swap(i as usize, j as usize);
+        }
+    }
+    arr.swap((i + 1) as usize, pivot as usize);
+    i + 1
+}
 
 /// Returns k-th smallest element of an array, i.e. its order statistics.
 /// Time complexity is O(n^2) in the worst case, but only O(n) on average.

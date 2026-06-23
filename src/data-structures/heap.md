@@ -1,4 +1,4 @@
-# 堆(Heap)
+# Куча
 
 ```rust
 // Heap data structure

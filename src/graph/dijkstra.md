@@ -1,4 +1,4 @@
-# 最短路径-Dijkstra
+# Кратчайший путь — Дейкстра
 
 ```rust
 use std::cmp::Reverse;

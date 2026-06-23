@@ -1,4 +1,4 @@
-# 最大子数组
+# Максимальный подмассив
 
 ```rust
 /// ## maximum subarray via Dynamic Programming

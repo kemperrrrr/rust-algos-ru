@@ -1,4 +1,4 @@
-# N皇后算法
+# N ферзей
 
 ```rust
 #[allow(unused_imports)]

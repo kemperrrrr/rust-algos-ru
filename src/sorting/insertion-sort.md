@@ -1,10 +1,10 @@
-# 插入排序
+# Сортировка вставками
 
 ```rust
 pub fn insertion_sort<T: PartialOrd>(arr: &mut [T]) {
-    // 从第二个元素开始排序
+    // Начинаем со второго элемента
     for i in 1..arr.len() {
-        // 找到 arr[i] 该插入的位置
+        // Ищем позицию для вставки arr[i]
         let mut j = i;
         while j > 0 && arr[j - 1] > arr[j] {
             arr.swap(j - 1, j);
@@ -13,11 +13,11 @@ pub fn insertion_sort<T: PartialOrd>(arr: &mut [T]) {
     }
 }
 
-// 这里需要 T: Ord 是因为 binary_search() 方法的限制
+// Требуется T: Ord из-за ограничения binary_search()
 pub fn insertion_sort_binary_search<T: Ord>(arr: &mut[T]) {
-    // 从第二个元素开始排序
+    // Начинаем со второго элемента
     for i in 1..arr.len() {
-        // 利用二分查找获取 arr[i] 应该插入的位置
+        // Бинарный поиск позиции для вставки arr[i]
         let pos = arr[..i].binary_search(&arr[i]).unwrap_or_else(|pos| pos);
         let mut j = i;
         while j > pos {

@@ -1,4 +1,4 @@
-# 鸡尾酒排序
+# Сортировка перемешиванием
 
 ```rust
 pub fn cocktail_shaker_sort<T: Ord>(arr: &mut [T]) {

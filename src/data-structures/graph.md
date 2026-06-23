@@ -1,4 +1,4 @@
-# 图(graph)
+# Граф
 
 ```rust
 use std::collections::{HashMap, HashSet};

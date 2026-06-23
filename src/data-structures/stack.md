@@ -1,4 +1,4 @@
-# 栈
+# Стек
 
 From Wikipedia, a stack is an abstract data type that serves as a collection of elements, with two main principal operations, `Push` and `Pop`.
 

@@ -1,4 +1,4 @@
-# 二叉树
+# Бинарное дерево поиска
 
 ```rust
 use std::cmp::Ordering;

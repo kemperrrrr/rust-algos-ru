@@ -1,4 +1,4 @@
-# 归并排序
+# Сортировка слиянием
 
 ```rust
 pub fn merge_sort<T>(arr: &mut [T])
@@ -14,7 +14,7 @@ fn merge_sort_range<T>(arr: &mut [T], lo: usize, hi: usize)
 where
     T: PartialOrd + Clone + Default,
 {
-    // 只有当元素个数大于一时才进行排序
+    // Сортируем только если больше одного элемента
     if lo < hi {
         let mid = lo + ((hi - lo) >> 1);
         merge_sort_range(arr, lo, mid);
@@ -23,12 +23,12 @@ where
     }
 }
 
-// 合并两个有序数组: arr[lo..=mid], arr[mid + 1..=hi]
+// Слияние двух отсортированных подмассивов: arr[lo..=mid], arr[mid + 1..=hi]
 fn merge_two_arrays<T>(arr: &mut [T], lo: usize, mid: usize, hi: usize)
 where
     T: PartialOrd + Clone + Default,
 {
-    // 这里需要 clone 数组元素
+    // Необходимо клонировать элементы массива
     let mut arr1 = arr[lo..=mid].to_vec();
     let mut arr2 = arr[mid + 1..=hi].to_vec();
 

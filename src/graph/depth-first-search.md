@@ -1,4 +1,4 @@
-# 深度优先搜索
+# Поиск в глубину
 
 ```rust
 use std::collections::HashSet;

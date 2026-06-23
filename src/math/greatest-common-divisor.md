@@ -1,4 +1,4 @@
-# 最大公约数
+# Наибольший общий делитель
 
 ```rust
 /// Greatest Common Divisor.

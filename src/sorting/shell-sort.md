@@ -1,4 +1,4 @@
-# 希尔排序
+# Сортировка Шелла
 
 ```rust
 pub fn shell_sort<T: Ord + Copy>(values: &mut Vec<T>) {

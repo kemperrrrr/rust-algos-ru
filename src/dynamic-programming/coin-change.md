@@ -1,4 +1,4 @@
-# 找钱(Coin change)
+# Размен монет
 
 ```rust
 /// Coin change via Dynamic Programming

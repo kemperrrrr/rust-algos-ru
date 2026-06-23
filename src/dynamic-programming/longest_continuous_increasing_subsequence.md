@@ -1,4 +1,4 @@
-# 最长连续递增序列
+# Наибольшая непрерывная возрастающая подпоследовательность
 
 ```rust
 pub fn longest_continuous_increasing_subsequence<T: Ord>(input_array: &[T]) -> &[T] {

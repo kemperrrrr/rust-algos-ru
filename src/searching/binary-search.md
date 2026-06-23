@@ -1,4 +1,4 @@
-# 二分搜索
+# Бинарный поиск
 
 ![alt text][binary-image]
 

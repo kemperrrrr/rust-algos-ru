@@ -1,4 +1,4 @@
-# 寻找完美数
+# Совершенные числа
 
 ```rust
 pub fn is_perfect_number(num: usize) -> bool {

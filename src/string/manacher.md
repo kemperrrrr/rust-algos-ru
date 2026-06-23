@@ -1,4 +1,4 @@
-# 马拉车算法(Manacher)
+# Алгоритм Манакера
 
 ```rust
 pub fn manacher(s: String) -> String {

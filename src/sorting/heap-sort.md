@@ -1,23 +1,23 @@
-# 堆排序
+# Пирамидальная сортировка
 
 ```rust
 pub fn heap_sort<T: PartialOrd>(arr: &mut [T]) {
     let size = arr.len();
-    // 构建大根堆
+    // Построение max-кучи
     for i in (0..size / 2).rev() {
         heapify(arr, i, size);
     }
 
-    // 每轮循环将堆顶元素（也就是最大元素）放到最后
+    // Каждая итерация: перемещаем корень (максимум) в конец
     for i in (1..size).rev() {
         arr.swap(0, i);
-        // 恢复大根堆
+        // Восстанавливаем max-кучу
         heapify(arr, 0, i);
     }
 }
 
 fn heapify<T: PartialOrd>(arr: &mut [T], root: usize, end: usize) {
-    // 记录父节点和左右节点中最大元素的索引位置
+    // Индекс наибольшего среди родителя и детей
     let mut largest = root;
 
     let left_child = 2 * root + 1;

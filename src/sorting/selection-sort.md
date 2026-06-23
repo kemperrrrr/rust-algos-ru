@@ -1,4 +1,4 @@
-# 选择排序
+# Сортировка выбором
 
 ```rust
 pub fn selection_sort<T: PartialOrd>(arr: &mut [T]) {
@@ -8,7 +8,7 @@ pub fn selection_sort<T: PartialOrd>(arr: &mut [T]) {
 
     let size = arr.len();
     for i in 0..(size - 1) {
-        // 找到最小元素的索引值
+        // Находим индекс минимального элемента
         let mut min_index = i;
         for j in (i + 1)..size {
             if arr[j] < arr[min_index] {

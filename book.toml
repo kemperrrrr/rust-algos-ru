@@ -1,9 +1,8 @@
 [book]
 authors = ["course.rs"]
-language = "zh-CN"
-multilingual = false
+language = "ru"
 src = "src"
-title = "Rust算法教程 The Algos (algorithms)"
+title = "Rust Алгоритмы The Algos (algorithms)"
 
 [output.html]
 git-repository-url = "https://github.com/course-rs/algos"

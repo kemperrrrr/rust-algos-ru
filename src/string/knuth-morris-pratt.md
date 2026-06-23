@@ -1,4 +1,4 @@
-# KMP算法(Knuth Morris Pratt)
+# Алгоритм Кнута — Морриса — Пратта
 
 ```rust
 pub fn knuth_morris_pratt(st: String, pat: String) -> Vec<usize> {

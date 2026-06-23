@@ -1,4 +1,4 @@
-# 最长公共子序列
+# Наибольшая общая подпоследовательность
 
 ```rust
 /// Longest common subsequence via Dynamic Programming
@@ -69,8 +69,8 @@ mod tests {
 
         // unicode
         assert_eq!(
-            &longest_common_subsequence("你好，世界", "再见世界"),
-            "世界"
+            &longest_common_subsequence("привет, мир", "прощай, мир"),
+            "мир"
         );
     }
 }
